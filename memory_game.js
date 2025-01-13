@@ -1,6 +1,6 @@
-alert("If you are on mobile device please turn on Desktop view :)");
 let selectedValue = null;
 let windiv=document.querySelector('.win');
+alert("If you are on mobile device please turn on Desktop view :)");
 windiv.style.display="none";
 document.querySelector(".score").style.display="block";
 document.addEventListener('DOMContentLoaded', () => {
