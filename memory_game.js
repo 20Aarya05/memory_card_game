@@ -1,3 +1,4 @@
+alert("If you are on mobile device please turn on Desktop view :)");
 let selectedValue = null;
 let windiv=document.querySelector('.win');
 windiv.style.display="none";
