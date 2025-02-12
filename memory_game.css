@@ -8,129 +8,141 @@
 body {
     background-color: #1a1a1a;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
+    text-align: center;
+    padding: 10px;
 }
 
+/* Header */
 .headercont {
-    text-align: center;
-    color: white;
-    font-size: 4rem;
+    font-size: 3vw; /* Scales with screen size */
+    font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 20px;
-    position: absolute;
-    top: 20px;
-    width: 100%;
+    margin-bottom: 10px;
 }
 
-.dfl{
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    margin-top: 20px;
-    position: absolute;
-    top: 140px;
-    width: 100%;
+/* Difficulty Selection */
+.dfl {
+    font-size: 2vw;
+    margin-top: 10px;
 }
 
 #options {
     color: white;
-    position: absolute;
-    top: 200px;
-    right: 50%;
-    transform: translateX(50%);
     background-color: #333;
     border: none;
-    padding: 10px;
+    padding: 8px 12px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin-bottom: 15px;
 }
 
-.win {
-    text-align: center;
-    color: white;
-    margin-top: 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-}
-
-.win .win-text{
-    font-size: 10rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.win .win-score{
-    font-size: 4rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.score {
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    margin-top: 20px;
-    position: absolute;
-    bottom:  50px;
-    width: 100%;
-}
-
+/* Main Game Container */
 .main-game-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
-    gap: 15px;
-    margin-top: 60px;
+    gap: 10px;
+    max-width: 90vw;
+    margin-top: 10px;
 }
 
+/* Game Grid */
 .main-cont {
     display: flex;
+    gap: 8px;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;
 }
 
+/* Game Boxes */
 .box {
     background-color: #2c2c2c;
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    border: 2px solid #333;
+    border-radius: 8px;
+    border: 2px solid #444;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 2vw;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Box Hover Effect */
 .box:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
 }
 
 .box.flipped {
-    color: white;
     background-color: #444;
+    color: white;
 }
 
-.main-cont {
-    display: flex;
-    gap: 10px;
+/* Score Display */
+.score {
+    font-size: 2vw;
+    margin-top: 10px;
 }
 
+/* Win Message */
+.win {
+    text-align: center;
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+}
+
+.win .win-text {
+    font-size: 6vw;
+    font-weight: bold;
+}
+
+.win .win-score {
+    font-size: 3vw;
+}
+
+/* Mobile Optimizations */
 @media (max-width: 768px) {
+    .headercont {
+        font-size: 6vw;
+    }
+
+    .dfl, .score {
+        font-size: 4vw;
+    }
+
+    #options {
+        font-size: 4vw;
+        padding: 10px;
+    }
+
     .main-cont {
         flex-direction: column;
     }
 
     .box {
-        height: 80px;
-        width: 80px;
+        height: 12vw;
+        width: 12vw;
+        font-size: 6vw;
+    }
+
+    .win .win-text {
+        font-size: 10vw;
+    }
+
+    .win .win-score {
+        font-size: 6vw;
     }
 }
